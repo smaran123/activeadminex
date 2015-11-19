@@ -1,0 +1,7 @@
+<br/>
+Completed Tasks<br/>
+<% @tasks.each do |task| %>
+
+<%= task.name %>
+<%end%>
+<%= link_to "Tasks", tasks_path %>

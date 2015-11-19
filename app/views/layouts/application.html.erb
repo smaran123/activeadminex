@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Activeadminex</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% unless user_signed_in? %>
+<%=link_to "Signup",new_user_registration_path %>
+<%=link_to "Signin",new_user_session_path %>
+<%else%>
+<%=link_to "Signout",destroy_user_session_path,:method => :delete %>
+
+
+<% end %>
+<%flash.each do |msg,key| %>
+<%= content_tag :div, msg,:id => key %>
+<% end %>
+<%= yield %>
+
+</body>
+</html>

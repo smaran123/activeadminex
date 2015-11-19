@@ -1,0 +1,18 @@
+<br/>
+<%= form_tag products_path, :method => 'get' do %>
+<p>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag :seach, :name => nil %> 
+</p>
+<%end%>
+
+<h2> products </h2>
+<% @products.each do |product|%>
+<ul>
+<li><%= product.name %> </li>
+<%= link_to "Edit product", edit_product_path(product) %>
+<%= link_to "Delete",product_path(product), :method => :delete %>
+</ul>
+<%end%>
+
+<%= link_to "New product", new_product_path %>

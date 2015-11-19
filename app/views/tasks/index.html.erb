@@ -1,0 +1,11 @@
+<h2>Incomplete Tasks </h2>
+<% @tasks.each do |task|%>
+<ul>
+<li><%= task.name %> </li>
+<%= link_to "Edit Task", edit_task_path(task) %>
+<%= link_to "CompleteTask",completed_task_path(task), :method => :put %>
+</ul>
+<%end%>
+
+<%= link_to "New Task", new_task_path %>
+<%= link_to "CompleteTasks", complete_tasks_path %>

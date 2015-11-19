@@ -1,0 +1,19 @@
+<%= form_for @product do |f| %>
+<% if params[:preview_button] %>
+<%= @product.name%>
+<%= @product.price %>
+<%end%>
+<div class="field" %>
+<%= f.label :Name %>
+<%= f.text_field :name %>
+</div><br/>
+<div class="field" %>
+<%= f.label :price %>
+<%= f.number_field :price %>
+</div>
+<br/>
+<div class="action" %>
+<%= f.submit %>
+<%= submit_tag :preview, :name => "preview_button" %>
+</div>
+<%end%>
