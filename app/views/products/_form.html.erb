@@ -1,8 +1,9 @@
 <%= form_for @product do |f| %>
-<% if params[:preview_button] %>
+<div><% if params[:preview_button] %>
 <%= @product.name%>
 <%= @product.price %>
 <%end%>
+</div>
 <div class="field" %>
 <%= f.label :Name %>
 <%= f.text_field :name %>
